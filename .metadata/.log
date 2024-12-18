@@ -407,3 +407,6 @@ END
 
 !ENTRY org.springframework.tooling.boot.ls 1 0 2024-12-17 00:02:03.410
 !MESSAGE Classpath changed for project: user-service
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-12-17 23:42:46.400
+!MESSAGE Classpath changed for project: user-service

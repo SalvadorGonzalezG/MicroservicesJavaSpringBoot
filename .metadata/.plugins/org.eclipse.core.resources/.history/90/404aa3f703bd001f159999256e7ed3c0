@@ -1,0 +1,35 @@
+package com.user.service.entities;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+
+@Entity // Mapeamos la clase en una tabla en la base de datos permite a JPA gestionar el ciclo de vida de las entidades como creacion, actualizacion y elimiaciom
+public class User {
+
+    // atrubutos de la clase
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //indicamos que el ID sera autoincremnatble
+    private int id;
+
+    private String name;
+
+    private String email;
+
+    //Añadimos los getters & setters
+    public void setId(int id){
+        this.id = id;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public void setEmail(String email){
+        this.email = email;
+    }
+
+    public int getId(){
+        return this.id;
+    }
+}
