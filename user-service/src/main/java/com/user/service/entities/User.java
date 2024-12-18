@@ -5,13 +5,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-
-@Entity // Mapeamos la clase en una tabla en la base de datos permite a JPA gestionar el ciclo de vida de las entidades como creacion, actualizacion y elimiaciom
+@Entity // Mapeamos la clase en una tabla en la base de datos permite a JPA gestionar el
+        // ciclo de vida de las entidades como creacion, actualizacion y elimiaciom
 public class User {
 
     // atrubutos de la clase
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //indicamos que el ID sera autoincremnatble
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // indicamos que el ID sera autoincremnatble
     private int id;
 
     private String name;
@@ -19,31 +19,35 @@ public class User {
     private String email;
 
     // Costructor por defecto requerido por JPA
-    // Permite intanciar la clase User sin necesidad de proporcionar valores iniciales para atributos
+    // Permite intanciar la clase User sin necesidad de proporcionar valores
+    // iniciales para atributos
     public User() {
-		super();
-	}
-    
-    //Añadimos los getters & setters
-    public void setId(int id){
+        super();
+    }
+
+    // Añadimos los getters & setters
+    public void setId(int id) {
         this.id = id;
     }
-    public void setName(String name){
+
+    public void setName(String name) {
         this.name = name;
     }
-    public void setEmail(String email){
+
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public int getId(){
+    public int getId() {
         return id;
     }
-    
+
     public String getName() {
-    	return name;
+        return name;
     }
+
     public String getEmail() {
-    	return email;
+        return email;
     }
-    
+
 }
