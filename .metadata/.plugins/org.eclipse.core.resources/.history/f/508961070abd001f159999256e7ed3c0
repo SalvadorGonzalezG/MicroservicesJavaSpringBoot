@@ -1,0 +1,17 @@
+package com.user.service.serv;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.user.service.repository.UserRepository;
+
+@Service
+public class UserService {
+	
+	// Inyectamos automaticamente una intancia de repository
+	// accedemos a las operaciones de la DB sin necesidad de intanciar manualmente el repositorio
+	@Autowired
+	private UserRepository userRepository;
+	
+	
+}

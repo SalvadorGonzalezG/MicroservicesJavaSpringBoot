@@ -1,0 +1,12 @@
+package com.user.service.serv;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.user.service.repository.UserRepository;
+
+@Service
+public class UserService {
+	@Autowired
+	private UserRepository userRepository;
+}
