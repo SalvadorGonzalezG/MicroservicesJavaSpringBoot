@@ -1,0 +1,7 @@
+package com.user.service.controller;
+
+@RestController
+@RequestMapping("/user")
+public class UserController {
+
+}

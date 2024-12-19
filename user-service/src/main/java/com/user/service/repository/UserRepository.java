@@ -11,4 +11,5 @@ import com.user.service.entities.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer>{
 
+	
 }

@@ -29,6 +29,8 @@ public class UserService {
 		return userRepository.findById(id).orElse(null);
 	}
 	
+	// Metodo para guarda un nuevo usuario en la DB
+	// Utiliza el metodo save() del repositorio, que guarda la entidad y devuelve el objeto creado
 	public User save(User user) {
 		User newUser = userRepository.save(user);
 		return newUser;
