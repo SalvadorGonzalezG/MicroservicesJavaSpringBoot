@@ -1,6 +1,7 @@
 package com.user.service.serv;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,5 +35,16 @@ public class UserService {
 	public User save(User user) {
 		User newUser = userRepository.save(user);
 		return newUser;
+	}
+	
+	// etodo para borrar un usuario de la DB
+	// Utilizamos el metodo 
+	public User deleteUserById(int id) {
+	    Optional<User> user = userRepository.findById(id);
+	    if (user.isPresent()) {
+	        userRepository.deleteById(id);
+	        return user.get(); // Retorna el usuario eliminado
+	    }
+	    return user.get();
 	}
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.user.service.entities.User;
+import com.user.service.exceptions.UserNotFoundException;
 import com.user.service.serv.UserService;
 
 // Indicamos que est aclase es un controlador REST
@@ -63,6 +65,21 @@ public class UserController {
 		User newUser = userService.save(user);
 // Retornamos una respuesta HTTP 200 OK con el cuarpo recien creado como cuerpo de la respuesta
 		return ResponseEntity.ok(newUser);
+	}
+	
+	// Eliminar un usuario por ID
+	// Ruta DELETE para eliminar un usuario
+	@DeleteMapping("/{id}")
+	public ResponseEntity<User> deleteUser(@PathVariable("id") int id){
+		try {
+			// Llamamos al servicio para eliminar el usuario
+			User deleteUser = userService.deleteUserById(id);
+			// Si se elimino correctamente, retornamos el usaurio eliminado con un codigo 200 OK
+			return ResponseEntity.ok(deleteUser);
+		} catch(UserNotFoundException e) {
+			// Si el usuario no se encuentra, retorna un error 404 con el msj
+			return ResponseEntity.status(404).body(null);
+		}
 	}
 	
 }
