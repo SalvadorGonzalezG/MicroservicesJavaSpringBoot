@@ -1282,3 +1282,5 @@
 2024-12-25 23:03:03,218 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2024-12-25 23:03:03,221 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\salva\OneDrive\Escritorio\Microservices\user-service\src\test\resources
 2024-12-25 23:03:28,590 [Worker-115: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-12-25 23:03:28,602 [Worker-115: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-12-25 23:03:28,604 [Worker-115: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\salva\OneDrive\Escritorio\Microservices\user-service\src\test\resources
