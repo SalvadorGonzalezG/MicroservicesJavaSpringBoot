@@ -1,0 +1,49 @@
+package com.user.service.entities;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity // Mapeamos la clase a una tabla en la base de datos, permitiendo a JPA gestionar su ciclo de vida.
+public class User {
+
+    // Atributos de la clase
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Indicamos que el ID será autoincrementable.
+    private int id;
+
+    private String name;
+    private String email;
+
+    // Constructor por defecto requerido por JPA.
+    // Permite instanciar la clase User sin necesidad de proporcionar valores iniciales para los atributos.
+    public User() {
+        super();
+    }
+
+    // Getters y setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+}

@@ -4,9 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity // Mapeamos la clase en una tabla en la base de datos permite a JPA gestionar el
         // ciclo de vida de las entidades como creacion, actualizacion y elimiaciom
+@Table(name = "USERS")  // en JPA se utiliza para especificar el nombre de la tabla de la DB esta asociada a una clase marcada con @Entiry
 public class User {
 
     // atrubutos de la clase
