@@ -31,6 +31,6 @@ public class CarService {
 	
 	// metodo que obtendra todos los carros de un usuario
 	public List<Car> byUserId(int userId){
-		return carrRepository.findByUser(userId);
+		return carrRepository.findByUserId(userId);
 	}
 }

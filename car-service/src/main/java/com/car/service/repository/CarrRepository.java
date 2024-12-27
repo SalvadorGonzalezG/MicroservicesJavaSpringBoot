@@ -14,5 +14,5 @@ public interface CarrRepository extends JpaRepository<Car, Integer>{
 	
 // Método personalizado que busca una Lista de objetos 'Car' asociado a un usuario especifico
 // por 'userId' Spring Data JPA genera automaticamnte la implementacion de este metodo
-	List<Car> findByUser(int userId);
+	List<Car> findByUserId(int userId);
 }
