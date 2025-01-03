@@ -42,7 +42,6 @@ INDEX VERSION 1.134+C:\Users\salva\OneDrive\Escritorio\Microservices\.metadata\.
 1001363983.index
 1492364803.index
 2679304269.index
-2339348140.index
 3445839533.index
 789349697.index
 1865797976.index

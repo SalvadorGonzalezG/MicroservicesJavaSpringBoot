@@ -35,38 +35,40 @@ public class MotoController {
 		return ResponseEntity.ok(moto);
 	}
 	
-	// Metodo HTTP 
+	// Metodo HTTP GET para obtener una moto por su ID
 	@GetMapping("/id")
 	public ResponseEntity<Moto> obtenerMoto(@PathVariable("/id") int id){
+	// LLama al servicio para buscar la moto por su ID
 		Moto moto = motoService.getMotoById(id);
+	// Verifica si se encontro la moto
 		if(moto == null) {
+	// Si no se encuentra devuelve una respuesta HTTP 204 (no content)
 			return ResponseEntity.noContent().build();
 		}
+	// Si la moto fue encontrada, devuelve una respuesta HTTP 200 ok con el objeto moto
 		return ResponseEntity.ok(moto);
 	}
-	// Metodo para guardar un carro
+	// Metodo HTTP POST para guardar una moto
 	@PostMapping
 	public ResponseEntity<Moto> saveMoto(@RequestBody Moto moto){
+	// LLama al servicio para guardar la nueva moto en la DB
 		Moto newMoto = motoService.save(moto);
+	// Devuelve una respuesta HTTP 200 OK con la moto recien guardada en el cuerpo de la respuesta 
 		return ResponseEntity.ok(newMoto);
 	}
 	
-	//Metodo
+	// Metodo HTTP GET para obtener una lista de motos asociadas a un usuario especifico
 	@GetMapping("/user/{userId}")
 	public ResponseEntity<List<Moto>> ListMotoPerUserId(@PathVariable("userId") int id){
+	// LLama al servicio para buscar las motos asociadas ak ID del usuario
 		List<Moto> moto = motoService.findByUserId(id);
+	// Verifica si la lista de motos esta vacia
 		if(moto.isEmpty()) {
+	// Si no hay motos asociadas, devuelve una Respuesta HTTP con el estado 204 (no content)
 			return ResponseEntity.noContent().build();
 		}
+	// Si se encuentran motos, devuelve una respuesta HTTP con el estado 200 ok y la lista de motos
 		return ResponseEntity.ok(moto);
-	}
-	
-
-	
-	
-	
-	
-	
-	
+	}	
 }
 
