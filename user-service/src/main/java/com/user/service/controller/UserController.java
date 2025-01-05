@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.user.service.entities.User;
 import com.user.service.exceptions.UserNotFoundException;
+import com.user.service.models.Car;
 import com.user.service.serv.UserService;
 
 // Indicamos que est aclase es un controlador REST
@@ -80,6 +81,26 @@ public class UserController {
 			// Si el usuario no se encuentra, retorna un error 404 con el msj
 			return ResponseEntity.status(404).body(null);
 		}
+	}
+	
+	@GetMapping("/cars/{userId}")
+	public ResponseEntity<List<Car>> getCars(@PathVariable("userId") int id){
+		User user = userService.getUserById(id);
+		if(user == null) {
+			return ResponseEntity.notFound().build();
+		}
+		List<Car> car = userService.getCars(id);
+		return ResponseEntity.ok(car);
+	}
+	
+	@GetMapping("/moto/{userId}")
+	public ResponseEntity<List<moto>> getMotos(@PathVariable("userId") int id){
+		User user = userService.getUserById(id);
+		if(user == null) {
+			return ResponseEntity.notFound().build();
+		}
+		List<Moto> moto = userService.getMotos(id);
+		return ResponseEntity.ok(moto);
 	}
 	
 }
