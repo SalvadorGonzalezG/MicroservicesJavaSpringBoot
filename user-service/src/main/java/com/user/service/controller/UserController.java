@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.user.service.entities.User;
 import com.user.service.exceptions.UserNotFoundException;
 import com.user.service.models.Car;
+import com.user.service.models.Moto;
 import com.user.service.serv.UserService;
 
 // Indicamos que est aclase es un controlador REST
@@ -94,7 +95,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/moto/{userId}")
-	public ResponseEntity<List<moto>> getMotos(@PathVariable("userId") int id){
+	public ResponseEntity<List<Moto>> getMotos(@PathVariable("userId") int id){
 		User user = userService.getUserById(id);
 		if(user == null) {
 			return ResponseEntity.notFound().build();
