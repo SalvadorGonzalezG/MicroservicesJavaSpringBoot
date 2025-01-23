@@ -12,6 +12,6 @@ import com.moto.service.entity.Moto;
 @Repository
 public interface MotoRepository extends JpaRepository<Moto, Integer>{
 
-	// Declaramos un metodo personalizado para busacar motos asociados a un usuario especifico
+	// Declaramos un metodo personalizado para busacar motos asociados a un usuario especifico busca telefonos asociados a un userId especifico
 	List<Moto> findByUserId(int userId);
 }
