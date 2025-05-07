@@ -1,0 +1,13 @@
+package com.playerEquip.espec;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class PlayerEquipmentApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(PlayerEquipmentApplication.class, args);
+	}
+
+}
