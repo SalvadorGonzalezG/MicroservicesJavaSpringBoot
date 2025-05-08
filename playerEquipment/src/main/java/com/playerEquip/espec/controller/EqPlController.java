@@ -10,13 +10,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.playerEquip.espec.models.Equipment;
 import com.playerEquip.espec.models.Player;
-import com.playerEquip.espec.services.EquipmentService;
+import com.playerEquip.espec.services.IService;
 
 @Controller
 public class EqPlController {
 	
 	@Autowired
-	EquipmentService equipmentService;
+	//EquipmentService equipmentService;
+	
+	//Iyeccion de dependecia atravez de una Interfaz
+	IService equipmentService;
 	
 	@GetMapping("/parameters/{nombre}/{numero}")
 	public String PathVariabl(@PathVariable String nombre, @PathVariable("numero") int numero, Model model) {
