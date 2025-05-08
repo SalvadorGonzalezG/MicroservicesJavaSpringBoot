@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<title>Page</title>
+	<title>Page</title>
 </head>
+
 <body>
 
-<h1 th:text="${player.nombre}"></h1>
-<p th:text="${player.numero}"></p>
+	<div th:if="${player != null}">
+		<h1 style="color:red;" th:text="${player.nombre}"></h1>
+		<p th:text="${player.numero}"></p>
+	</div>
+	<div th:if="${player == null}"> 
+		<h1 style="color:red;">Not Find the Player :[ </h1>
+	</div>
 
 </body>
+
 </html>
