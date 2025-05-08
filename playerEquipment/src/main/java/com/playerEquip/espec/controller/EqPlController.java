@@ -2,6 +2,7 @@ package com.playerEquip.espec.controller;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,11 +14,15 @@ import com.playerEquip.espec.services.EquipmentService;
 
 @Controller
 public class EqPlController {
+	
+	@Autowired
+	EquipmentService equipmentService;
+	
 	@GetMapping("/parameters/{nombre}/{numero}")
 	public String PathVariabl(@PathVariable String nombre, @PathVariable("numero") int numero, Model model) {
 		
 		//Instancia del objeto equipmentService
-		EquipmentService equipmentService = new EquipmentService();
+		//EquipmentService equipmentService = new EquipmentService();
 		
 		Optional<Equipment> optionalEquipment = equipmentService.getEquipment().stream().filter(equipment -> nombre.toLowerCase().equals(equipment.getNombre().toLowerCase())).findFirst();
 			if(optionalEquipment.isPresent()) {
