@@ -30,9 +30,22 @@ public class EqPlController {
 		Optional<Equipment> optionalEquipment = equipmentService.getEquipment().stream().filter(equipment -> nombre.toLowerCase().equals(equipment.getNombre().toLowerCase())).findFirst();
 			if(optionalEquipment.isPresent()) {
 				Optional<Player> playerOptional = optionalEquipment.get().getPlantilla().stream().filter(player -> numero == player.getNumero()).findFirst();
+				
+				if(playerOptional.isPresent()) {
 				model.addAttribute("player", playerOptional.get());
+				}else {
+					model.addAttribute("player", null);
+				}
+			}else {
+				model.addAttribute("player", null);
 			}
 		return "viewPlayersAndEquipments";
 	}
+	
+	@GetMapping({"/parameters/{nombre}", "//parameters/{nombre}/"}) 
+    public String onlyNombre(@PathVariable String nombre, Model model) {
+        model.addAttribute("player", null); // no hay jugador específico
+        return "viewPlayersAndEquipments";
+    }
 
 }
